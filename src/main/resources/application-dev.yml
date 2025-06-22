@@ -1,0 +1,20 @@
+server:
+  port: 3000
+#config db wih env environment file Use	Store secrets and environment settings
+spring:
+  application:
+    origin-url: ${APP_ORIGIN_URL:http://localhost:${server.port}}
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost:${DB_PORT:5432}}/${DB_NAME:practice}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${HIBERNATE_HHD_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:true}
+    open-in-view: ${OPEN_IN_VIEW:true}
+    properties:
+      hibernate:
+        format_sql: ${HIBERNATE_FORMAT_SQL:false}
