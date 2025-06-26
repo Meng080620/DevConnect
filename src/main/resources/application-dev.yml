@@ -2,11 +2,9 @@ server:
   port: 3000
 #config db wih env environment file Use	Store secrets and environment settings
 spring:
-  application:
-    origin-url: ${APP_ORIGIN_URL:http://localhost:${server.port}}
 
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost:${DB_PORT:5432}}/${DB_NAME:practice}
+    url: jdbc:postgresql://${DB_HOST:localhost:${DB_PORT:5432}}/${DB_NAME:dev-connect}
     username: ${DB_USER:postgres}
     password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
